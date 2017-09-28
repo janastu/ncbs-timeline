@@ -10,6 +10,14 @@
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="css/main.css" />
         <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+        <style type="text/css"> 
+        .tl-slidenav-icon{
+          color: #822d1a !important;
+          }
+          .tl-slidenav-description{
+           color: #F9A01F !important ;
+          }
+          </style>
 </head>
 <body>
 
@@ -65,8 +73,11 @@ scrollEffect();
       // and the element must have CSS styling to give it width and height
       // optionally, a third argument with configuration options can be passed.
       // See below for more about options.
+      var options={
+        initial_zoom : 5
+      }
      timeline = new TL.Timeline('timeline-embed',
-        'https://docs.google.com/spreadsheets/d/1ov0QnYUEuT5mikDxyycwAgaVHJ9--WcjWxbW0zs-er4/pubhtml');
+        'https://docs.google.com/spreadsheets/d/1ov0QnYUEuT5mikDxyycwAgaVHJ9--WcjWxbW0zs-er4/pubhtml',options);
     </script>
 
 
