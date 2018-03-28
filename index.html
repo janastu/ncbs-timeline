@@ -18,37 +18,19 @@
            color: #F9A01F !important ;
           }
           </style>
+            <!-- image slider -->
+              <link href="js/lightGallery-master/dist/css/lightgallery.min.css" rel="stylesheet">
+          <link href="js/lightGallery-master/dist/css/lg-transitions.min.css" rel="stylesheet">
 </head>
 <body>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/classie.js"></script>
+
 
 <script src="js/timeline.js"></script>
 
-<script type="text/javascript">
-        function scrollEffect(){
-            
-            window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 25,
-                header = document.querySelector("header");
-            if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
-                //$("#ncbs-home-text-collapsible").hide();
-            } else {
-                //$("#ncbs-home-text-collapsible").show();
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
-            }
-        });
-        };
 
-scrollEffect();
-    
-</script>
             
 
 <br><br><br>
@@ -63,8 +45,8 @@ scrollEffect();
         </div>
         </div>
 </div>
-<br><br>
 
+  <script type="text/javascript" src="js/lightGallery-master/dist/js/lightgallery-all.js"></script>
 <script type="text/javascript">
       // The TL.Timeline constructor takes at least two arguments:
       // the id of the Timeline container (no '#'), and
@@ -78,6 +60,18 @@ scrollEffect();
       }
      timeline = new TL.Timeline('timeline-embed',
         'https://docs.google.com/spreadsheets/d/1ov0QnYUEuT5mikDxyycwAgaVHJ9--WcjWxbW0zs-er4/pubhtml',options);
+     console.log(timeline);
+     timeline.on('change', function(event){
+
+      if(timeline.getCurrentSlide().has.media){
+
+        $('center a').lightGallery({
+            selector: 'this'
+        });
+      }
+
+     });
+
     </script>
 
 
@@ -113,13 +107,9 @@ scrollEffect();
 </div>
 
 
-<script type="text/javascript">
-    $( "#close-intro" ).click(function() {
-    $("#intro").css("display", "none");
-    //$("#close").css("display", "none");
-});
 
-</script>
+
+
 
 
 
